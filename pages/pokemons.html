@@ -1,0 +1,25 @@
+<section ng-controller="pokemonCtrl" class="builder" ng-hide="load.loading">
+	<div class="team">
+		<h2>Tu Equipo de {{region | capitalize}}</h2>
+		<div ng-repeat="(key, value) in team">
+			<article>
+				<a href="" ng-click="removeTeam(key, value.name)">
+					<img ng-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{value.pokedex}}.png">
+					<!-- <img src="../images/3.png"> -->
+					<span>{{ value.name | capitalize }}</span>				
+				</a>			
+			</article>
+		</div>		
+	</div>
+	<div class="pokemons content">
+		<div ng-repeat="(key, value) in pkregion">
+			<article class="pokemon">
+				<a href="" ng-click="addTeam(value.pokemon_species.pokedex, value.pokemon_species.name)">
+					<img ng-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{value.pokemon_species.pokedex}}.png">
+					<!-- <img src="../images/3.png"> -->
+					<span>{{ value.pokemon_species.name | capitalize }}</span>				
+				</a>			
+			</article>
+		</div>
+	</div>
+</section>

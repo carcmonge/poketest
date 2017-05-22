@@ -1,0 +1,13 @@
+<section class="regions" ng-controller="regionCtrl" ng-hide="load.loading">
+	<div class="content">
+		<h1>Elige una región</h1>
+		<div ng-repeat="(key, value) in regions">
+			<article>
+				<a href="/pokemons/{{ value.id }}/{{ value.name }}">
+					<img ng-src="images/regions/{{value.name}}.png">
+					<span>{{ value.name | capitalize }}</span>				
+				</a>			
+			</article>
+		</div>
+	</div>
+</section>

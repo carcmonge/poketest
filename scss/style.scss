@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+$purple:    #4D3076;
+
+$color-back:  $purple;
+$color-text:  #44696C;
+
+
+$font-text:   'Roboto', sans-serif;
+
+$tablet:  600px;
+$desktop:   1024px;
+
+@mixin tablet{
+	@media only screen and (min-width: #{$tablet} )
+	{
+		@content;
+	}
+}
+
+@mixin desktop{
+	@media only screen and (min-width: #{$desktop} )
+	{
+		@content;
+	}
+}
+
+body
+{
+    background: url("../images/bg.jpg") no-repeat center fixed;
+    background-size: cover;
+	color: $color-text;
+	font-family: $font-text;
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+.content
+{
+	margin: auto;
+	max-width: 1200px;
+	position: relative;
+}
+h1
+{
+	font-size: 30px;
+	@include tablet
+	{
+		font-size: 50px;
+	}
+}
+
+/*menu*/
+	.header
+	{
+		div
+		{
+			text-align: center;
+		}
+	}
+	.logo
+	{
+		margin: 0;
+		padding: 20px 0;
+		img{
+			width: 300px;
+			margin: 0;
+		}
+
+		@include tablet
+		{
+			display: inline-block;
+			margin-left: 0;
+		}
+	}
+/*end menu*/
+
+/*app*/
+	.app
+	{
+		background-color: rgba(255,253,245,0.75);
+		max-width: 1200px;
+		margin: auto auto 50px auto;
+		padding: 50px;
+	}
+
+	.builder
+	{
+		text-align: center;
+	}
+/*end app*/
+
+/*pokemon*/
+	.pokemons
+	{
+		div
+		{
+			display: inline-block;
+		}
+	}
+
+	.pokemons
+	{
+		text-align: center;
+
+	}
+
+	.pokemon
+	{
+		a 
+		{
+
+			text-decoration: none;
+			padding: 10px 10px 0 10px;
+			span{
+				color: white;
+				display: block;
+				font-weight: 400;
+				font-size: 15px;
+				color: #44696C;
+			}
+			img
+			{
+				width: 130px;
+
+				&:hover
+				{
+					animation: bounce 0.3s linear infinite;
+					
+					@keyframes bounce {
+						0% {
+							transform: translateY(0);
+						}
+						50% {
+							transform: translateY(-5px);
+						}
+						100% {
+							transform: translateY(0);
+						}
+					}
+				}
+			}
+		}
+	}
+/*end pokemon*/
+
+/*region*/
+	.regions
+	{
+		text-align: center;
+		div
+		{
+			display: inline-block;
+			text-align: center;
+			article
+			{
+				margin: 40px;
+				text-align: center;
+				a
+				{
+					text-decoration: none;
+					img
+					{
+						border-radius: 50%;
+						border: solid 3px $color-text;
+						margin-bottom: 20px;
+						display: block;
+						height: 200px;
+						width: 200px;
+
+						@include tablet
+						{
+							margin-bottom: 10px;
+							height: 150px;
+							width: 150px;						
+						}
+					}
+					span
+					{
+
+						color: $color-text;
+						font-weight: 400;
+						font-size: 1em;
+					}
+				}
+			}
+			h1
+			{
+				font-size: 1.5em;
+			}
+		}
+	}
+/*end region*/
+
+/*team*/
+	.team
+	{
+		display: inline-block;
+		margin-bottom: 40px;
+		div
+		{
+			display: inline-block;
+			margin: 30px;
+			article
+			{
+				display: block;
+				a
+				{
+					img
+					{
+						display: block;
+						background-color: $color-text;
+						border-radius: 50%;
+    					margin-bottom: 15px;
+						padding: 10px;
+
+						@include tablet
+						{
+
+						}
+					}
+					span
+					{
+						background-color: $color-text;
+						border-radius: 5px;
+						padding: 10px;
+						color: white;
+						font-weight: 400;
+						font-size: 0.7em;
+					}
+				}
+			}
+		}
+	}
+/*end team*/
+
+/*loading*/
+	.loading
+	{
+		div
+		{
+			margin: auto;
+			text-align: center;
+			min-height:400px;
+
+			@include tablet
+			{
+				min-height: auto;
+			}
+
+			img
+			{
+				width: 100px;
+			}
+			span
+			{
+				color: $color-text;
+				display: block;
+				font-weight: 400;
+				font-size: 1em;
+			}
+			
+		}
+	}
+/*end loading*/

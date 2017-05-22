@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html lang="es" ng-app="poketest" ng-controller="mainCtrl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PokeTest</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/android_toast.min.css">
+
+	<!-- Incluir AngularJS -->
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-route.min.js"></script>
+	<script src="js/lib/android_toast.min.js"></script>
+
+	<script src="js/main.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/pokemonsCtrl.js"></script>
+	<script src="js/regionsCtrl.js"></script>
+</head>
+<body>
+	<header class="header"> <!-- header -->
+		<div class="content">
+			<figure class="logo"> <!-- logo -->
+				<img src="images/logo.png">
+			</figure>
+		</div>
+	</header>
+	<div class="app">
+		<div class="content">
+		<!-- La pagina principal ira aquí -->
+			<div class="loading" ng-show="load.loading">
+				<div class="content">
+					<img ng-src="{{load.img.img}}">
+					<span>{{load.message.text}}</span>
+				</div>
+			</div>
+			<div ng-view></div>
+
+		</div><!-- /.container -->	
+	</div>
+</body>
+</html>
